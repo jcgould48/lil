@@ -1,13 +1,17 @@
-const Node = () => {
-  return {}
+const Node = (value) => {
+  return {
+value: value,
+next: null
+  }
 }
 
 const Lil = () => {
   return {
-    head: '',
+    head: null,
 
-    values: function() {
-
+    values: function(value) {
+      // value: value,
+      // next : null
     },
 
     addToStart: function(value) {
