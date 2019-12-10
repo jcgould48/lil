@@ -85,15 +85,18 @@ const Lil = () => {
     },
 
     removeAt: function(i) {
-      let current = this.head;
-      if (current === null){
+      if (!this.head){
         return null
+      } 
+      let current = this.head;
+      i--
+      while (i > 0){
+        current = current.next;
+        i--;
       }
-      else{
-        newArr = this.values();
-        newArr[i] = 0;
-        return newArr[i];
-      }
+      const deleted = current.next;
+      current.next = deleted.next;
+      return deleted.value;
     },
   }
 }
