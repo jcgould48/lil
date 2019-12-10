@@ -85,18 +85,20 @@ const Lil = () => {
     },
 
     removeAt: function(i) {
-      if (!this.head){
-        return null
-      } 
-      let current = this.head;
-      i--
-      while (i > 0){
-        current = current.next;
-        i--;
-      }
-      const deleted = current.next;
-      current.next = deleted.next;
-      return deleted.value;
+      let current = this.head
+      let previous = current
+      let count = 0
+      if(current !== null){
+        while(count!==i){
+          previous = current
+          current = current.next
+          theNext = current.next
+          count++
+        }
+        previous.next = theNext
+        return current.value
+      } return null
+      
     },
   }
 }
